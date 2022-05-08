@@ -1,0 +1,22 @@
+{
+  "modinv": {
+    "prefix": "modinv",
+    "body": [
+      "fn modinv(a: &i128, m: &i128) -> i128 {",
+      "    let (mut a, mut b, mut u, mut v) = (*a, *m, 1, 0);",
+      "    while b > 0 {",
+      "        let t = a / b;",
+      "        a -= t * b;",
+      "        u -= t * v;",
+      "        swap(&mut a, &mut b);",
+      "        swap(&mut u, &mut v);",
+      "    }",
+      "    if u < 0 {",
+      "        u + m",
+      "    } else {",
+      "        u",
+      "    }",
+      "}"
+    ]
+  }
+}
