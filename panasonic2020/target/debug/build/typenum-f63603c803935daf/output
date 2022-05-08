@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/shunya/Dropbox/RustCoder/panasonic2020/target/debug/build/typenum-f63603c803935daf/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/shunya/Dropbox/RustCoder/panasonic2020/target/debug/build/typenum-f63603c803935daf/out/op.rs
