@@ -1,5 +1,4 @@
 use cargo_snippet::snippet;
-#[allow(dead_code)]
 use std::mem::swap;
 
 #[snippet(prefix = "use std::mem::swap;")]
