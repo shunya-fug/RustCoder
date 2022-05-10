@@ -1,32 +1,39 @@
 [package]
-name = "RustCoder"
+name = "abc153"
 version = "0.1.0"
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[workspace]
-members = [
-    "abc068",
-    "abc074",
-    "abc086",
-    "abc132",
-    "abc142",
-    "abc157",
-    "abc160",
-    "abc161",
-    "abc250",
-    "agc014",
-    "panasonic2020",
-    "typical90",
-    "abc138",
-    "abc094",
-    "abc116",
-    "abc149",
-    "agc027",
-    "abc092",
-    "hitachi2020",
-    "abc153",
-]
+[package.metadata.cargo-compete.bin]
+abc153-a = { alias = "a", problem = "https://atcoder.jp/contests/abc153/tasks/abc153_a" }
+abc153-b = { alias = "b", problem = "https://atcoder.jp/contests/abc153/tasks/abc153_b" }
+abc153-c = { alias = "c", problem = "https://atcoder.jp/contests/abc153/tasks/abc153_c" }
+abc153-d = { alias = "d", problem = "https://atcoder.jp/contests/abc153/tasks/abc153_d" }
+abc153-e = { alias = "e", problem = "https://atcoder.jp/contests/abc153/tasks/abc153_e" }
+abc153-f = { alias = "f", problem = "https://atcoder.jp/contests/abc153/tasks/abc153_f" }
+
+[[bin]]
+name = "abc153-a"
+path = "src/bin/a.rs"
+
+[[bin]]
+name = "abc153-b"
+path = "src/bin/b.rs"
+
+[[bin]]
+name = "abc153-c"
+path = "src/bin/c.rs"
+
+[[bin]]
+name = "abc153-d"
+path = "src/bin/d.rs"
+
+[[bin]]
+name = "abc153-e"
+path = "src/bin/e.rs"
+
+[[bin]]
+name = "abc153-f"
+path = "src/bin/f.rs"
 
 [dependencies]
 num = "=0.2.1"
@@ -68,4 +75,5 @@ text_io = "=0.1.8"
 whiteread = "=0.5.0"
 rustc-hash = "=1.1.0"
 smallvec = "=1.2.0"
-cargo-snippet = "0.6.5"
+
+[dev-dependencies]
