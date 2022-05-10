@@ -1,5 +1,6 @@
 use itertools::Itertools;
 use proconio::{fastout, input};
+use std::collections::HashMap;
 
 #[fastout]
 fn main() {
@@ -9,17 +10,20 @@ fn main() {
     }
 
     let mut ball: Vec<usize> = (1..=n).collect();
-    let mut address: Vec<usize> = (1..=n).collect();
-    address.insert(0, 0);
+    let mut address: HashMap<usize, usize> =
+        ball.iter().enumerate().map(|(i, v)| (*v, i)).collect();
     for x in x {
-        let i = address[x];
-        let j = if address[x] + 1 < ball.len() {
-            address[x] + 1
+        let left = address[&x];
+        let right = if address[&x] + 1 < n {
+            address[&x] + 1
         } else {
-            0
+            address[&x] - 1
         };
-        ball.swap(i, j);
-        address.swap(ball[i], ball[j]);
+
+        address.entry(ball[left]).and_modify(|x| *x = right);
+        address.entry(ball[right]).and_modify(|x| *x = left);
+
+        ball.swap(left, right);
     }
 
     println!("{}", ball.iter().join(" "));
