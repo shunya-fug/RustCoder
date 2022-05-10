@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use cargo_snippet::snippet;
 use std::mem::swap;
 

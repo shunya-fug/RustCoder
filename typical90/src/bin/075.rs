@@ -4,7 +4,8 @@ fn main() {
     input! {mut n: usize,}
 
     let mut factor: Vec<usize> = Vec::new();
-    for i in 2..n.clone() {
+    let m = n;
+    for i in 2..m {
         if i * i > n {
             break;
         }

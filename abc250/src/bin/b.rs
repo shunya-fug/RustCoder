@@ -1,6 +1,3 @@
-use std::iter::Cycle;
-
-use itertools::iproduct;
 use proconio::{fastout, input};
 
 #[fastout]
