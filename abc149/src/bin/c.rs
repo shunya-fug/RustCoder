@@ -7,10 +7,9 @@ fn main() {
     }
 
     for n in x.. {
-        for i in 2..n {
-            if i * i > n {
-                break;
-            }
+        if !(2..n).take_while(|i| i * i <= n).any(|i| n % i == 0) {
+            println!("{}", n);
+            break;
         }
     }
 }
