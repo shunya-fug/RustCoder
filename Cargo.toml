@@ -24,6 +24,7 @@ members = [
     "abc149",
     "agc027",
     "abc092",
+    "hitachi2020",
 ]
 
 [dependencies]
