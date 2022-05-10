@@ -1,3 +1,4 @@
+use ndarray::{s, Array, Array2};
 use proconio::{fastout, input};
 
 #[fastout]
@@ -6,27 +7,13 @@ fn main() {
         (h, w, r, c): (usize, usize, usize, usize)
     }
 
-    let ans = if h == 1 && w == 1 {
-        0
-    } else if h == 1 {
-        if c == 1 || c == w {
-            1
-        } else {
-            2
-        }
-    } else if w == 1 {
-        if r == 1 || r == h {
-            1
-        } else {
-            2
-        }
-    } else if r == 1 && c == 1 || r == 1 && c == w || r == h && c == 1 || r == h && c == w {
-        2
-    } else if r == 1 || r == h || c == 1 || c == w {
-        3
-    } else {
-        4
-    };
+    let mut arr: Array2<usize> = Array::zeros((h + 2, w + 2));
+    arr.slice_mut(s![1..=h, 1..=w]).fill(1);
+
+    let ans: usize = [(r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)]
+        .iter()
+        .map(|(i, j)| arr[[*i, *j]])
+        .sum();
 
     println!("{}", ans);
 }
