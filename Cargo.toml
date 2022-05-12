@@ -61,6 +61,7 @@ members = [
     "abc148",
     "abc058",
     "abc053",
+    "agc003",
 ]
 
 [dependencies]
