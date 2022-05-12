@@ -1,55 +1,39 @@
 [package]
-name = "RustCoder"
+name = "abc140"
 version = "0.1.0"
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[workspace]
-members = [
-    "abc068",
-    "abc074",
-    "abc086",
-    "abc132",
-    "abc142",
-    "abc157",
-    "abc160",
-    "abc161",
-    "abc250",
-    "agc014",
-    "panasonic2020",
-    "typical90",
-    "abc138",
-    "abc094",
-    "abc116",
-    "abc149",
-    "agc027",
-    "abc092",
-    "hitachi2020",
-    "abc153",
-    "abc158",
-    "abc114",
-    "abc108",
-    "abc063",
-    "abc052",
-    "abc084",
-    "abc071",
-    "abc127",
-    "abc141",
-    "abc123",
-    "abc134",
-    "agc002",
-    "abc152",
-    "abc118",
-    "abc044",
-    "abc124",
-    "abc090",
-    "agc024",
-    "abc079",
-    "abc139",
-    "abc062",
-    "abc059",
-    "abc140",
-]
+[package.metadata.cargo-compete.bin]
+abc140-a = { alias = "a", problem = "https://atcoder.jp/contests/abc140/tasks/abc140_a" }
+abc140-b = { alias = "b", problem = "https://atcoder.jp/contests/abc140/tasks/abc140_b" }
+abc140-c = { alias = "c", problem = "https://atcoder.jp/contests/abc140/tasks/abc140_c" }
+abc140-d = { alias = "d", problem = "https://atcoder.jp/contests/abc140/tasks/abc140_d" }
+abc140-e = { alias = "e", problem = "https://atcoder.jp/contests/abc140/tasks/abc140_e" }
+abc140-f = { alias = "f", problem = "https://atcoder.jp/contests/abc140/tasks/abc140_f" }
+
+[[bin]]
+name = "abc140-a"
+path = "src/bin/a.rs"
+
+[[bin]]
+name = "abc140-b"
+path = "src/bin/b.rs"
+
+[[bin]]
+name = "abc140-c"
+path = "src/bin/c.rs"
+
+[[bin]]
+name = "abc140-d"
+path = "src/bin/d.rs"
+
+[[bin]]
+name = "abc140-e"
+path = "src/bin/e.rs"
+
+[[bin]]
+name = "abc140-f"
+path = "src/bin/f.rs"
 
 [dependencies]
 num = "=0.2.1"
@@ -91,4 +75,5 @@ text_io = "=0.1.8"
 whiteread = "=0.5.0"
 rustc-hash = "=1.1.0"
 smallvec = "=1.2.0"
-cargo-snippet = "0.6.5"
+
+[dev-dependencies]
