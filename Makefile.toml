@@ -1,0 +1,16 @@
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+
+[config]
+default_to_workspace = false
+skip_core_tasks = true
+
+[tasks.new]
+script = '''
+#!/usr/bin/env zsh
+ROOT_DIR=$(cargo metadata --format-version=1 | jq -r '.workspace_root')
+cd $ROOT_DIR
+cargo compete new $1
+cargo member include $1
+cd $1
+'''
