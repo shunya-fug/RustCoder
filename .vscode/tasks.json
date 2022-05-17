@@ -22,13 +22,39 @@
 			"label": "rust: cargo build"
 		},
 		{
-			"label": "new",
+			"label": "rust: cargo compete new",
 			"type": "cargo",
 			"command": "compete",
 			"args": [
 				"new",
 				"${input:contest}"
 			],
+		},
+		{
+			"label": "rust: cargo member include",
+			"type": "cargo",
+			"command": "member",
+			"args": [
+				"include",
+				"${input:contest}"
+			]
+		},
+		{
+			"label": "new",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"rust: cargo compete new",
+				"rust: cargo member include",
+			],
+			"presentation": {
+				"echo": false,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true,
+			},
+			"problemMatcher": [],
 		},
 		{
 			"label": "test",
@@ -54,32 +80,6 @@
 				"cwd": "${fileDirname}"
 			}
 		},
-		{
-			"label": "rust: cargo member include",
-			"type": "cargo",
-			"command": "member",
-			"args": [
-				"include",
-				"${input:contest}"
-			]
-		},
-		{
-			"label": "new contest",
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"new",
-				"rust: cargo member include",
-			],
-			"presentation": {
-				"echo": false,
-				"reveal": "silent",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": false,
-				"clear": true,
-			},
-			"problemMatcher": [],
-		}
 	],
 	"inputs": [
 		{
